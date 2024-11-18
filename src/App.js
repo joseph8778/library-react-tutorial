@@ -18,20 +18,12 @@ function App() {
   }
 
 function changeQuantity(book, quantity) {
-    setCart(cart.map(item => {
-      if (item.id === book.id) {
-        return {
-          ...item,
-          quantity: +quantity
-        
-        }
-      }
-      else {
-        return item
-      }
-    }))
+    setCart(cart.map(item => item.id === book.id ? 
+      {...item,
+      quantity: +quantity} : item
+))}
 
-}
+
 
   useEffect(() => {
     console.log('useEffect', cart)
