@@ -1,7 +1,8 @@
 import React from 'react';
 
-const CartItem = ({book, changeQuantity}) => {
-   
+const CartItem = ({book, changeQuantity, removeBook}) => {
+   const bookPrice = (book.salePrice || book.originalPrice).toFixed(2)
+   const quantityPrice = (bookPrice * book.quantity).toFixed(2)
     return (
     <div className="cart__item">
         <div className="cart__book">
@@ -9,11 +10,9 @@ const CartItem = ({book, changeQuantity}) => {
         <div className="cart__book--info">
             <span className="cart__book--title">{book.title}</span>
             <span className="cart__book--price"> $
-                {
-                (book.salePrice || book.originalPrice).toFixed(2)
-                }
+                {bookPrice}
             </span>
-            <button className="cart__book--remove"></button>
+            <button onClick={() => removeBook(book.id)} className="cart__book--remove">Remove</button>
         </div>
         </div>
         
@@ -27,7 +26,7 @@ const CartItem = ({book, changeQuantity}) => {
         </div>
 
         <div className="cart__total">
-        
+        ${quantityPrice}
         </div>
     </div>
     );
