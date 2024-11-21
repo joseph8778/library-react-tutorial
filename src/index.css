@@ -230,12 +230,14 @@ LANDING
 
 header {
   height: calc(100vh - 80px);
+  min-height: 550px;
 }
 
 .header__container {
   width: 100%;
   max-width: 720px;
   margin: 0 auto;
+  margin-top: 24px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -249,7 +251,7 @@ header {
 }
 
 .header__img--wrapper {
-  padding: 20px;
+  padding: 40px;
 
   /* Added this after the tutorial to 
   show it over the wave on larger screens */
@@ -258,6 +260,7 @@ header {
   /* Added this after the tutorial to 
   make landing page responsive on laptops */
   max-height: 50vh;
+  min-height: 248px;
 }
 
 .container {
@@ -374,8 +377,12 @@ FEATURES
 
 .book {
   width: 25%;
+  
   padding: 24px;
   transition: all 300ms ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .book:hover {
@@ -383,14 +390,15 @@ FEATURES
 }
 
 .book__img {
-  max-height: 320px;
-  max-width: 250px;
+  width: 100%;
+  max-height: 350px;
+  max-width: 230px;
   transition: all 300ms ease;
 }
 
 .book__img--skeleton {
   width: 100%;
-  max-width: 250px;
+  max-width: 230px;
   height: 320px;
   background-color: rgb(204, 204, 204);
   margin-bottom: 8px;
@@ -424,12 +432,16 @@ FEATURES
   margin-bottom: 8px;
   border-radius: 4px;
   overflow: hidden;
-  display: flex;
 }
+
+
+
 
 .book__title {
   font-size: 20px;
   margin-bottom: 8px;
+  width: 100%;
+  max-width: 230px ;
 }
 
 .book__title--link {
@@ -439,12 +451,16 @@ FEATURES
 .book__ratings {
   margin-bottom: 8px;
   color: #fabf2a;
+  width: 100%;
+  max-width: 230px ;
 }
 
 .book__price--normal {
   text-decoration: line-through;
   padding-right: 6px;
   color: #bfbfbf;
+  text-align: left;
+
 }
 
 /* 
@@ -634,6 +650,8 @@ select {
 .book__price {
   font-size: 16px;
   margin: 8px 0 24px 0;
+  width: 100%;
+  max-width: 230px ;
 }
 
 .link__breadcrumbs {
